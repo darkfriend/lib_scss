@@ -1,0 +1,14 @@
+/**
+ * Add value in map
+ * @param {string} $val
+ * @param {map} $sourceMap
+ * @param {integer} $step
+ * @return {map}
+ */
+@function map_push($val, $sourceMap, $step:0) {
+  @if (type_of($sourceMap)!='map') {
+    @error "sourceMap is not map!";
+  }
+  $res : (length($sourceMap)+$step: $val);
+  @return map_merge($sourceMap, $res);
+}

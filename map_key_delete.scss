@@ -1,0 +1,17 @@
+/**
+ * Ищет ключи $delKeys и удаляет их у $sourceProps
+ * @param {map} $delKeys
+ * @param {map} $source
+ * @return {map}
+ */
+@function map_key_delete($delKeys:(),$source:()){
+  $res : ();
+  @if($delKeys&&$source){
+    @each $key, $val in $delKeys {
+      @if(map_has_key($source, $key)==false) {
+        $res : map_add($key,$val,$res);
+      }
+    }
+  }
+  @return $res;
+}

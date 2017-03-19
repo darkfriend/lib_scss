@@ -1,0 +1,19 @@
+/**
+ * Add key and value in map
+ * @param {string} $handle
+ * @param {string} $map
+ */
+@function in_map($handle:false,$map:()) {
+  @if (type_of($map)!='map') {
+    @error "sourceMap is not map!";
+  }
+  //@return map-has-key($map, $handle);
+  @if($handle&&$map){
+    @each $key, $val in $map {
+      @if($handle==$key){
+        @return true;
+      }
+    }
+  }
+  @return false;
+}

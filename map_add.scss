@@ -1,0 +1,11 @@
+/**
+ * Add key and value in map
+ * @param {string} $key
+ * @param {string} $val
+ * @param {map} $sourceMap
+ * @return {map}
+ */
+@function map_add($key, $val, $sourceMap) {
+  $res: ($key: $val);
+  @return map_merge($sourceMap, $res);
+}
