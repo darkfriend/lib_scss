@@ -1,1 +1,1 @@
-# lib_scss
+# Library functions SCSS
